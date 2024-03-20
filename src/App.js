@@ -7,8 +7,10 @@ const App = () => {
   const [result, setResult] = useState("");
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      // Tìm kiếm name dựa trên ID nhập vào
-      const item = data.find((item) => item.id === value);
+      // Tách lấy ID từ chuỗi nhập vào
+      const id = value.split("\t")[1];
+      // Tìm kiếm name dựa trên ID
+      const item = data.find((item) => item.id === id);
       if (item) {
         setResult(item.name); // Hiển thị name tương ứng nếu tìm thấy
       } else {
